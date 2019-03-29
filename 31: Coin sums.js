@@ -24,8 +24,8 @@ function sumSubSpaceEqualNum(num, space){
 function coinSums(n) {
 	let pence = n;
 	let currency = [1,2,5,10,20,50,100,200];
-  let ways = sumSubSpaceEqualNum(pence, currency);
-  return ways.length;
+	let ways = sumSubSpaceEqualNum(pence, currency);
+	return ways.length;
 }
 
 console.log(coinSums(50))  // should return 451.
