@@ -6,18 +6,21 @@ What is the nth prime number?
 function nthPrime(n) {
   "use strict";
   let primes = [2];
-  let primeFlag, num;
+  let num = primes[primes.length-1];
 
-  num = primes[primes.length-1];
-  while (primes.length < n) {
-    let isPrime = true
+  function isPrime(num){
+    let flag = true
     for (let p of primes) {
       if (num % p === 0){
-        isPrime = false;
+        flag = false;
         break;
       }
     }
-    if(isPrime)
+    return flag
+  }
+  
+  while (primes.length < n) {
+    if(isPrime(num))
       primes.push(num)
     num++;
   }
